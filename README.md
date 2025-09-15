@@ -1,2 +1,2 @@
-# OnmiMore
-OnmiMore Store
+# OmniMore
+OmniMore Store
