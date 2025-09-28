@@ -1,11 +1,60 @@
 <!doctype html>
-<html lang="x-default">
+<html lang="es">
 <head>
   <meta charset="utf-8" />
-  <title>OmniMore Store</title>
-  <meta http-equiv="refresh" content="0; url=/es/" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OmniMore Store — Muy Pronto</title>
+  <link rel="icon" href="../assets/favicon.ico" />
+  <link rel="icon" type="image/png" href="../assets/favicon.png" />
+  <style>
+    :root{ --green:#29a24a; --dark:#20312b; --muted:#5a6b64; }
+    *,*::before,*::after{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background: #ffffff url("../assets/background-leaves.svg") repeat;
+      background-size: cover;
+      color:var(--dark);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      display:flex; align-items:center; justify-content:center; padding:24px;
+    }
+    .wrap{position:relative; width:100%; max-width:920px;}
+    .card{ background:#fff; border-radius:28px; padding:44px 30px; border:1px solid rgba(32,49,43,.06);
+      box-shadow:0 20px 50px rgba(0,0,0,.06); text-align:center; }
+    .logo{ width:128px; margin:0 auto 18px; }
+    h1{ margin:0 0 8px; font-size:clamp(28px,5vw,44px); }
+    .badge{ display:inline-flex; align-items:center; gap:10px; padding:8px 14px; background:#e9f7ed; border-radius:999px; font-size:14px; margin-bottom:14px }
+    .badge .dot{ width:8px; height:8px; background:var(--green); border-radius:999px }
+    .slogan{ font-size:clamp(18px,3vw,22px); margin:4px 0 22px }
+    .tag{ color:var(--muted); margin-bottom:22px }
+    form{ display:flex; gap:10px; justify-content:center; flex-wrap:wrap; }
+    input[type=email]{ width:min(520px,80vw); padding:14px; border-radius:12px; border:1.5px solid rgba(32,49,43,.18); font-size:16px; }
+    button{ padding:14px 18px; border:none; border-radius:12px; background:var(--dark); color:#fff; font-weight:600; font-size:16px; cursor:pointer }
+    button:hover{ opacity:.9 }
+    .footer{ margin-top:20px; font-size:13px; color:var(--muted) }
+    .pill{ position:fixed; right:20px; bottom:20px; background:var(--dark); color:#fff; padding:8px 12px; border-radius:999px; font-size:12px; opacity:.95 }
+    .lang-switcher { position:absolute; top:20px; right:20px; }
+    .lang-switcher a { padding:6px 10px; border-radius:8px; background:#20312b; color:#fff; text-decoration:none; font-size:14px; }
+  </style>
 </head>
 <body>
-  <p>Redirigiendo a español... <a href="/es/">clic aquí</a></p>
+  <div class="wrap">
+    <main class="card">
+      <div class="lang-switcher"><a href="../en/">English</a></div>
+      <img class="logo" src="../assets/logo.png" alt="OmniMore Store Logo" />
+      <div class="badge"><span class="dot"></span> Muy Pronto</div>
+      <h1>OmniMore Store</h1>
+      <p class="slogan">Compra de forma más inteligente con OmniMore Store</p>
+      <p class="tag">Deja tu correo y te avisaremos en el lanzamiento.</p>
+      <form action="https://formspree.io/f/xldwdbbb" method="POST">
+        <input type="hidden" name="_redirect" value="https://omnimore.store/es/thank-you.html">
+        <input type="email" name="email" placeholder="Tu correo" required />
+        <button type="submit">Avísame</button>
+      </form>
+      <p class="footer">© <span id="year"></span> OmniMore Store · Marca y activos en desarrollo</p>
+    </main>
+    <div class="pill">omnimore.store</div>
+  </div>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
